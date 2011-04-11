@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WebCrawler
 {
-    class BasicGraph
+    class BasicGraph : IBasicGraph
     {
     }
 }

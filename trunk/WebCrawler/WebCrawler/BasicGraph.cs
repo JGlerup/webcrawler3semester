@@ -28,6 +28,14 @@ namespace WebCrawler
             }
             return edge;
         }
+
+        public void UnmarkAll()
+        {
+            foreach (Vertex v in vertices)
+            {
+                v.Mark = false;
+            }
+        }
         
         public void AddVertex(Vertex vertex)
         {

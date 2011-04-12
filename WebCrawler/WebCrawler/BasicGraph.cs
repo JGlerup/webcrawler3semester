@@ -59,7 +59,7 @@ namespace WebCrawler
 
         public bool ContainsVertex(Vertex vertex)
         {
-            throw new NotImplementedException();
+            return vertices.Contains(vertex);
         }
 
         public bool IsAdjacent(Vertex startVertex, Vertex endVertex)
@@ -69,7 +69,20 @@ namespace WebCrawler
 
         public System.Collections.IList GetAdjacencies(Vertex vertex)
         {
-            throw new NotImplementedException();
+            List<Vertex> localVerticies = new List<Vertex>();
+
+            foreach (Vertex v in vertices)
+            {
+                if (v == vertex)
+                {
+                    foreach (Edge edge in edges)
+                    {
+                        localVerticies.Add(edge.EndVertex);
+                    }
+                }
+            }
+
+            return localVerticies;
         }
 
         public System.Collections.IEnumerator Vertices()

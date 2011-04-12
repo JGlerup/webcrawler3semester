@@ -10,6 +10,24 @@ namespace WebCrawler
         private IList<Vertex> vertices;
         private IList<Vertex> dfSearch;
         private IList<Edge> edges;
+
+        public Edge FindEdge(Vertex startVertex, Vertex endVertex)
+        {
+            bool found = false;
+            int index = 0;
+            Edge edge = null;
+            while (!found && index < edges.Count)
+            {
+                Edge e = edges[index];
+                if (e.StartVertex == startVertex && e.EndVertex == endVertex)
+                {
+                    found = true;
+                    edge = e;
+                }
+                index++;
+            }
+            return edge;
+        }
         
         public void AddVertex(Vertex vertex)
         {
@@ -28,7 +46,7 @@ namespace WebCrawler
 
         public void RemoveEdge(Vertex from, Vertex to)
         {
-            throw new NotImplementedException();
+            edges.Remove(FindEdge(from, to));
         }
 
         public bool ContainsVertex(Vertex vertex)

@@ -48,12 +48,12 @@ namespace WebCrawler
 
         public System.Collections.IEnumerator Vertices()
         {
-            throw new NotImplementedException();
+            return vertices.GetEnumerator();
         }
 
         public System.Collections.IEnumerator Edges()
         {
-            throw new NotImplementedException();
+            return edges.GetEnumerator();
         }
 
         public bool IsEmpty()
@@ -73,7 +73,8 @@ namespace WebCrawler
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            vertices.Clear();
+            edges.Clear();
         }
 
         public System.Collections.IList DepthFirstSearch(Vertex v)

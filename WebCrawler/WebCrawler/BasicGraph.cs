@@ -18,7 +18,7 @@ namespace WebCrawler
 
         public void AddEdge(Vertex startVertex, Vertex endVertex)
         {
-            new Edge(startVertex, endVertex);
+            edges.Add(new Edge(startVertex, endVertex));
         }
 
         public void RemoveVertex(Vertex v)

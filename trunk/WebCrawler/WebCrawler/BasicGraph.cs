@@ -56,7 +56,7 @@ namespace WebCrawler
 
         public bool IsAdjacent(Vertex startVertex, Vertex endVertex)
         {
-            throw new NotImplementedException();
+            return FindEdge(startVertex, endVertex) == null;
         }
 
         public System.Collections.IList GetAdjacencies(Vertex vertex)

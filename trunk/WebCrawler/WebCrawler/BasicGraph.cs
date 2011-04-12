@@ -58,17 +58,17 @@ namespace WebCrawler
 
         public bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return vertices.Count == 0;
         }
 
         public int GetNoOfVertices()
         {
-            throw new NotImplementedException();
+            return vertices.Count;
         }
 
         public int GetNoOfEdges()
         {
-            throw new NotImplementedException();
+            return edges.Count;
         }
 
         public void Clear()

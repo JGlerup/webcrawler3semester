@@ -23,7 +23,7 @@ namespace WebCrawler
 
         public void RemoveVertex(Vertex v)
         {
-            throw new NotImplementedException();
+            vertices.Remove(v);
         }
 
         public void RemoveEdge(Vertex from, Vertex to)

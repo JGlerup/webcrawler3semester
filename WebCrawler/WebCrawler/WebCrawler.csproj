@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttP.cs" />
     <Compile Include="IBasicGraph.cs" />
     <Compile Include="IHTMLDoc.cs" />
     <Compile Include="IHttp.cs" />

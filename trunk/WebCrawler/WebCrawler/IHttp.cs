@@ -16,7 +16,7 @@ namespace Noea.Http
 		/// Gets a value indicating whether a Socket is connected to a remote host.
 		/// </summary>
 		/// <value>true if the socket is connected, otherwise false</value>>
-		bool IsConnected {get;}
+        //bool IsConnected {get;}
 
 		/// <summary>
 		/// Gets or sets the timeout value for sending and receiving. 
@@ -71,7 +71,7 @@ namespace Noea.Http
 		/// <param name="url">Identification of the server. i.e a dns name or a ip address</param>
 		/// <param name="port">Number between 1 and 65335, default 80</param>
 		/// <returns>the response from the server</returns>
-		String ConnectionTest(string url, int port);
+		String ConnectionTest(string url);
 	}
 
 

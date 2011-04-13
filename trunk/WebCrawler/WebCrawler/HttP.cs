@@ -14,13 +14,14 @@ namespace WebCrawler
         private WebResponse response;
         private StreamReader reader;
 
-        public bool IsConnected
-        {
-            get
-            {
-                
-            }
-        }
+        //public bool IsConnected
+        //{
+        //    get
+        //    {
+        //        return true;
+        //    }
+            
+        //}
 
         public int TimeOut
         {
@@ -64,10 +65,12 @@ namespace WebCrawler
 
         public string ConnectionTest(string url)
         {
-            Open(url);
-            for (string line = reader.ReadLine(); line != null; line = reader.ReadLine())
-                Console.WriteLine(line);
-            Close();
+            //Open(url);
+            //for (string line = reader.ReadLine(); line != null; )
+            //  return line;  
+            
+            //Close();
+            return url;
         }
     }
 }

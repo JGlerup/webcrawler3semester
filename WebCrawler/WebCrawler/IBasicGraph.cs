@@ -7,7 +7,7 @@ namespace WebCrawler
     /// basic graph operations on an unweighted graph are defined in this interface
     /// specification omitted when obvious
     /// </summary>
-    public interface IBasicGraph
+    interface IBasicGraph
     {
         ///<summary>
         ///adds a vertex to the graph

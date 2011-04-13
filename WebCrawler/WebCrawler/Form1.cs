@@ -15,5 +15,14 @@ namespace WebCrawler
         {
             InitializeComponent();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string url = tbxUrl.Text.ToString(); 
+            
+            
+            
+            webBrowser.Navigate(url); 
+        }
     }
 }

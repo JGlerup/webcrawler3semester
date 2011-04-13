@@ -8,7 +8,8 @@ namespace WebCrawler
     class BasicGraph : IBasicGraph
     {
         private IList<Vertex> vertices;
-        private IList<Vertex> dfSearch;
+        private List<Vertex> dfSearch;
+        private List<Vertex> bfSearch;
         private IList<Edge> edges;
 
         public Edge FindEdge(Vertex startVertex, Vertex endVertex)
@@ -118,7 +119,47 @@ namespace WebCrawler
 
         public System.Collections.IList DepthFirstSearch(Vertex v)
         {
-            throw new NotImplementedException();
+            v.Mark = true;
+
+            dfSearch = new List<Vertex>();
+
+            foreach (Vertex vertex in GetAdjacencies(v))
+            {
+                dfSearch.Add(v);
+                if (!vertex.Mark)
+                {
+                    DepthFirstSearch(vertex);
+                }
+            }
+            return dfSearch;
+        }
+
+        public System.Collections.IList BreadthFirstSearch(Vertex v)
+        {
+            List<Vertex> queue = new List<Vertex>();
+            bfSearch = new List<Vertex>();
+
+            queue.Add(v);
+
+            while (queue.Count > 0)
+            {
+                bfSearch.Add(v);
+                Vertex current = queue[0];
+                queue.RemoveAt(0);
+
+                if (v.Mark == false)
+                {
+                    v.Mark = true;
+
+                    List<Vertex> adjacencies = (List<Vertex>)GetAdjacencies(current);
+
+                    foreach (Vertex vertex in adjacencies)
+                    {
+                        queue.Add(vertex);
+                    }
+                }
+            }
+            return bfSearch;
         }
     }
 }

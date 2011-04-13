@@ -29,11 +29,9 @@ namespace WebCrawler
             url = tbxUrl.Text.ToString();
             mainNode = new TreeNode();
 
-            Vertex mainVertex = new Vertex(url);
-
             List<Vertex> localVertices = new List<Vertex>();
-                
-            localVertices = (List<Vertex>)bfSearchRecursive(mainVertex);
+
+            localVertices = (List<Vertex>)bfSearch(url);
             
             mainNode.Name = "mainNode";
             mainNode.Text = "Main: " +url;
@@ -42,13 +40,13 @@ namespace WebCrawler
             webBrowser.Navigate(url); 
         }
 
-        private System.Collections.IList bfSearchRecursive(Vertex v)
+        private System.Collections.IList bfSearch(string url)
         {
             BasicGraph basicGraph = new BasicGraph();
 
             List<Vertex> vertices = new List<Vertex>();
 
-            vertices = (List<Vertex>)basicGraph.BreadthFirstSearch(v);
+            vertices = (List<Vertex>)basicGraph.bfSearch2(url);
 
             return vertices;
         }

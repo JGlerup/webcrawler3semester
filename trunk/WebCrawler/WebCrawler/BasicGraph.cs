@@ -37,7 +37,7 @@ namespace WebCrawler
                 v.Mark = false;
             }
         }
-        
+
         public void AddVertex(Vertex vertex)
         {
             vertices.Add(vertex);
@@ -68,6 +68,11 @@ namespace WebCrawler
             return FindEdge(startVertex, endVertex) == null;
         }
 
+        public System.Collections.IList GetAdjacencies2(Vertex v)
+        {
+
+        }
+        
         public System.Collections.IList GetAdjacencies(Vertex vertex)
         {
             List<Vertex> localVerticies = new List<Vertex>();
@@ -132,6 +137,36 @@ namespace WebCrawler
                 }
             }
             return dfSearch;
+        }
+
+        public System.Collections.IList bfSearch2(string url)
+        {
+            List<Vertex> queue = new List<Vertex>();
+            List<string> linksFromSite = new List<string>();
+            bfSearch = new List<Vertex>;
+
+            Vertex localVertex = new Vertex(url);
+
+            linksFromSite = (List<string>)HTMLDoc.searchMatches(url);
+
+            while (linksFromSite.Count > 0)
+            {
+                //bfSearch.Add(localVertex);
+                //Vertex current = queue[0];
+                //queue.RemoveAt(0);
+
+                if (localVertex.Mark == false)
+	            {
+		            localVertex.Mark = true;
+                    foreach (var item in linksFromSite)
+	                {
+                        Vertex v = new Vertex(item);
+                        queue.Add(v);
+	                }
+	            }
+            }
+            return queue;
+
         }
 
         public System.Collections.IList BreadthFirstSearch(Vertex v)

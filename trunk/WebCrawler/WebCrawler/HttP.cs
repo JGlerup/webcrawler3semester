@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using Noea.Http;
 
 namespace WebCrawler
@@ -12,7 +13,9 @@ namespace WebCrawler
     {
         private WebRequest request;
         private WebResponse response;
+        private Stream dataStream;
         private StreamReader reader;
+        private string responseData;
 
         //public bool IsConnected
         //{
@@ -39,13 +42,17 @@ namespace WebCrawler
         {
 		    request = WebRequest.Create(url);
 		    response = request.GetResponse();
-		    reader = new StreamReader(response.GetResponseStream());
+            dataStream = response.GetResponseStream();
+		    reader = new StreamReader(dataStream);
+            responseData = reader.ReadToEnd();
         }
 
         public void Close()
         {
-            response.Close();
             reader.Close();
+            dataStream.Close();
+            response.Close();
+            
         }
 
         public void Send(string command)
@@ -53,9 +60,34 @@ namespace WebCrawler
             throw new NotImplementedException();
         }
 
-        public string Receive()
+        public List<string> Receive(string inputText)
         {
-            throw new NotImplementedException();
+            List<string> linkList = new List<string>();
+            //StringBuilder sb = new StringBuilder();  
+            Regex hrefs = new Regex("<a href.*?>");  
+            Regex http = new Regex("http:.*?>");
+            foreach (Match m in hrefs.Matches(inputText))
+            {
+                linkList.Add(m.ToString());
+                //sb.Append(m.ToString());
+                if (http.IsMatch(m.ToString()))
+                {
+                    linkList.Add(http.Match(m.ToString()).ToString());
+                    //sb.Append(http.Match(m.ToString()));
+                    //sb.Append("<br>");
+                }
+                else
+                {
+                    linkList.Add(m.ToString().Substring(1, m.ToString().Length - 1) + "<br>");
+                    //sb.Append(m.ToString().Substring(1, m.ToString().Length - 1) + "<br>");
+                }
+            }
+            
+            //char[] listLinks1 = {};
+            //sb.CopyTo(0, listLinks1, 0, sb.Length);
+            //listLinks.AddRange(sb.CopyTo(0, listLinks, 0, sb.Length));
+            //return sb.ToString();
+            return linkList;
         }
 
         public System.IO.Stream GetStream()

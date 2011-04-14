@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 
 namespace Noea.Http
@@ -53,7 +54,7 @@ namespace Noea.Http
 		/// Post:	The response is returned in a string
 		/// </summary>
 		/// <returns>the response from the server</returns>
-		string Receive();
+		List<string> Receive(string inputText);
 
 		/// <summary>
 		/// Gets a stream object to the server object, that might be used for common stream operations.

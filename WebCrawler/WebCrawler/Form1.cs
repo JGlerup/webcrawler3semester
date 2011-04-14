@@ -46,7 +46,7 @@ namespace WebCrawler
 
             int count = Convert.ToInt32(tbDebth.Text);
 
-            Dictionary<string, List<Vertex>> d = new Dictionary<string, List<Vertex>>(); 
+            Dictionary<Vertex, List<Vertex>> d = new Dictionary<Vertex, List<Vertex>>(); 
 
             List<string> adresses = new List<string>();
 

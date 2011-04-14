@@ -145,7 +145,7 @@ namespace WebCrawler
             Vertex localVertex = new Vertex(url);
             responseData = http.Open(url);
             http.Close();
-            linksFromSite = http.Receive(responseData);
+            linksFromSite = http.Receive(url, responseData);
             int count = linksFromSite.Count;
             
             while (count > 0)

@@ -135,13 +135,12 @@ namespace WebCrawler
             return dfSearch;
         }
 
-        public System.Collections.IList bfSearch2(string url)
+        public System.Collections.IList breadthFirstSearch(string url)
         {
             string responseData = "";
             List<Vertex> queue = new List<Vertex>();
             List<string> linksFromSite = new List<string>();
             IHttp http = new HttP();
-            //bfSearch = new List<Vertex>;
 
             Vertex localVertex = new Vertex(url);
             responseData = http.Open(url);
@@ -151,15 +150,9 @@ namespace WebCrawler
             
             while (count > 0)
             {
-                //bfSearch.Add(localVertex);
-                //Vertex current = queue[0];
-                //queue.RemoveAt(0);
-
                 if (localVertex.Mark == false)
 	            {
 		            localVertex.Mark = true;
-
-                    
 
                     foreach (var item in linksFromSite)
 	                {
@@ -170,35 +163,6 @@ namespace WebCrawler
 	            }
             }
             return queue;
-
-        }
-
-        public System.Collections.IList BreadthFirstSearch(Vertex v)
-        {
-            List<Vertex> queue = new List<Vertex>();
-            bfSearch = new List<Vertex>();
-
-            queue.Add(v);
-
-            while (queue.Count > 0)
-            {
-                bfSearch.Add(v);
-                Vertex current = queue[0];
-                queue.RemoveAt(0);
-
-                if (v.Mark == false)
-                {
-                    v.Mark = true;
-
-                    List<Vertex> adjacencies = (List<Vertex>)GetAdjacencies(current);
-
-                    foreach (Vertex vertex in adjacencies)
-                    {
-                        queue.Add(vertex);
-                    }
-                }
-            }
-            return bfSearch;
         }
     }
 }

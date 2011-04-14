@@ -70,6 +70,7 @@ namespace WebCrawler
             foreach (Match m in hrefs.Matches(inputText))
             {
                 linkList.Add(m.ToString());
+                m.
                 //sb.Append(m.ToString());
                 //if (http.IsMatch(m.ToString()))
                 //{

@@ -11,6 +11,8 @@ namespace WebCrawler
 {
     public partial class Form1 : Form
     {
+        public List<Vertex> localVertices;
+
         public string url;
         public TreeNode mainNode;
 
@@ -18,7 +20,7 @@ namespace WebCrawler
         public int ParentID { get; set; }
         public string Text { get; set; }
 
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -27,21 +29,36 @@ namespace WebCrawler
         private void btnSearch_Click(object sender, EventArgs e)
         {
             url = tbxUrl.Text.ToString();
-            mainNode = new TreeNode();
-
-            List<Vertex> localVertices = new List<Vertex>();
-
-            localVertices = (List<Vertex>)bfSearch(url);
             
-            mainNode.Name = "mainNode";
-            mainNode.Text = "Main: " +url;
-            this.treeView.Nodes.Add(mainNode);
-
+            //mainNode = new TreeNode();
+            //mainNode.Name = "mainNode";
+            //mainNode.Text = "Main: " +url;
+            //this.treeView.Nodes.Add(mainNode);
+            
             webBrowser.Navigate(url);
+            
+            localVertices = new List<Vertex>();
 
-            foreach (var item in localVertices)
+            addNode(localVertices);
+        }
+
+        private void addNode(List<Vertex> foundLinks)
+        {
+            foundLinks = (List<Vertex>)bfSearch(url);
+
+
+
+            foreach (var item in foundLinks)
             {
+                int i = 1;
+                
+                string Site = item.Url.ToString();
 
+                TreeNode node = new TreeNode(Site);
+
+                this.treeView.Nodes.Add("Node: " + i +" Link: " + node);
+
+                i++;
             }
         }
 

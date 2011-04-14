@@ -22,7 +22,7 @@ namespace Noea.Html
 		string URL{get;}
 		/// read-only. Returns the URL of the current web-page
 
-		IList GetAllLinks();
+        //IList GetAllLinks();
 		/// Returns a list of strings containing the urls
 		/// of all links to pages on the this site.
 		/// That is: links to web pages outside this are not included

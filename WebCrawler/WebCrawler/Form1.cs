@@ -11,14 +11,14 @@ namespace WebCrawler
 {
     public partial class Form1 : Form
     {
-        public List<Vertex> localVertices;
+        //public List<Vertex> localVertices;
 
         public string url;
-        public TreeNode mainNode;
+        //public TreeNode mainNode;
 
-        public int ID { get; set; }
-        public int ParentID { get; set; }
-        public string Text { get; set; }
+        //public int ID { get; set; }
+        //public int ParentID { get; set; }
+        //public string Text { get; set; }
 
 
         public Form1()
@@ -37,7 +37,7 @@ namespace WebCrawler
             
             webBrowser.Navigate(url);
             
-            localVertices = new List<Vertex>();
+            List<Vertex> localVertices = new List<Vertex>();
 
             addNode(localVertices);
         }
@@ -50,15 +50,15 @@ namespace WebCrawler
 
             foreach (var item in foundLinks)
             {
-                int i = 1;
+                //int i = 1;
                 
                 string Site = item.Url.ToString();
 
                 TreeNode node = new TreeNode(Site);
 
-                this.treeView.Nodes.Add("Node: " + i +" Link: " + node);
+                this.treeView.Nodes.Add(node);
 
-                i++;
+                //i++;
             }
         }
 

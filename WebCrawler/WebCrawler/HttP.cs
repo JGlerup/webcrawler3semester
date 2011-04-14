@@ -38,13 +38,14 @@ namespace WebCrawler
             }
         }
 
-        public void Open(string url)
+        public string Open(string url)
         {
 		    request = WebRequest.Create(url);
 		    response = request.GetResponse();
             dataStream = response.GetResponseStream();
 		    reader = new StreamReader(dataStream);
             responseData = reader.ReadToEnd();
+            return responseData;
         }
 
         public void Close()

@@ -67,11 +67,6 @@ namespace WebCrawler
         {
             return FindEdge(startVertex, endVertex) == null;
         }
-
-        public System.Collections.IList GetAdjacencies2(Vertex v)
-        {
-
-        }
         
         public System.Collections.IList GetAdjacencies(Vertex vertex)
         {

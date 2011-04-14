@@ -65,22 +65,22 @@ namespace WebCrawler
             List<string> linkList = new List<string>();
             //StringBuilder sb = new StringBuilder();  
             Regex hrefs = new Regex("<a href.*?>");  
-            Regex http = new Regex("http:.*?>");
+            //Regex http = new Regex("http:.*?>");
             foreach (Match m in hrefs.Matches(inputText))
             {
                 linkList.Add(m.ToString());
                 //sb.Append(m.ToString());
-                if (http.IsMatch(m.ToString()))
-                {
-                    linkList.Add(http.Match(m.ToString()).ToString());
+                //if (http.IsMatch(m.ToString()))
+                //{
+                    //linkList.Add(http.Match(m.ToString()).ToString());
                     //sb.Append(http.Match(m.ToString()));
                     //sb.Append("<br>");
-                }
-                else
-                {
-                    linkList.Add(m.ToString().Substring(1, m.ToString().Length - 1) + "<br>");
+                //}
+                //else
+                //{
+                    //linkList.Add(m.ToString().Substring(1, m.ToString().Length - 1) + "<br>");
                     //sb.Append(m.ToString().Substring(1, m.ToString().Length - 1) + "<br>");
-                }
+                //}
             }
             
             //char[] listLinks1 = {};

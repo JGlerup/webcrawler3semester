@@ -34,32 +34,32 @@
             this.treeView = new System.Windows.Forms.TreeView();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.btnClear = new System.Windows.Forms.Button();
+            this.tbDebth = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbxUrl
             // 
-            this.tbxUrl.Location = new System.Drawing.Point(9, 10);
-            this.tbxUrl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxUrl.Location = new System.Drawing.Point(12, 12);
+            this.tbxUrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxUrl.Name = "tbxUrl";
-            this.tbxUrl.Size = new System.Drawing.Size(246, 20);
+            this.tbxUrl.Size = new System.Drawing.Size(327, 22);
             this.tbxUrl.TabIndex = 0;
             // 
             // lbUrl
             // 
             this.lbUrl.AutoSize = true;
-            this.lbUrl.Location = new System.Drawing.Point(258, 12);
-            this.lbUrl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUrl.Location = new System.Drawing.Point(344, 15);
             this.lbUrl.Name = "lbUrl";
-            this.lbUrl.Size = new System.Drawing.Size(20, 13);
+            this.lbUrl.Size = new System.Drawing.Size(26, 17);
             this.lbUrl.TabIndex = 1;
             this.lbUrl.Text = "Url";
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(282, 9);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(376, 11);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(56, 19);
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -67,44 +67,52 @@
             // 
             // treeView
             // 
-            this.treeView.Location = new System.Drawing.Point(803, 32);
-            this.treeView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.treeView.Location = new System.Drawing.Point(1071, 39);
+            this.treeView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(227, 471);
+            this.treeView.Size = new System.Drawing.Size(301, 579);
             this.treeView.TabIndex = 3;
             // 
             // webBrowser
             // 
-            this.webBrowser.Location = new System.Drawing.Point(9, 32);
-            this.webBrowser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(15, 16);
+            this.webBrowser.Location = new System.Drawing.Point(12, 39);
+            this.webBrowser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(790, 470);
+            this.webBrowser.Size = new System.Drawing.Size(1053, 578);
             this.webBrowser.TabIndex = 4;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(343, 10);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Location = new System.Drawing.Point(457, 12);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(56, 19);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // tbDebth
+            // 
+            this.tbDebth.Location = new System.Drawing.Point(538, 12);
+            this.tbDebth.Name = "tbDebth";
+            this.tbDebth.Size = new System.Drawing.Size(82, 22);
+            this.tbDebth.TabIndex = 6;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 513);
+            this.ClientSize = new System.Drawing.Size(1384, 631);
+            this.Controls.Add(this.tbDebth);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.treeView);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lbUrl);
             this.Controls.Add(this.tbxUrl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -120,6 +128,7 @@
         private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox tbDebth;
     }
 }
 

@@ -61,7 +61,7 @@ namespace WebCrawler
             throw new NotImplementedException();
         }
 
-        public List<string> Receive(string inputText)
+        public List<string> Receive(string url, string inputText)
         {
             List<string> linkList = new List<string>();
             //StringBuilder sb = new StringBuilder();  
@@ -69,7 +69,13 @@ namespace WebCrawler
             //Regex http = new Regex("http:.*?>");
             foreach (Match m in hrefs.Matches(inputText))
             {
-                linkList.Add(m.ToString());
+                string tempString = m.ToString();
+                tempString = tempString.Remove(0, 9);
+                tempString = tempString.Remove(tempString.Length - 2, 2);
+                tempString = url + tempString;
+                linkList.Add(tempString);
+                //linkList.
+                
                 //sb.Append(m.ToString());
                 //if (http.IsMatch(m.ToString()))
                 //{

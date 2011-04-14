@@ -54,7 +54,7 @@ namespace Noea.Http
 		/// Post:	The response is returned in a string
 		/// </summary>
 		/// <returns>the response from the server</returns>
-		List<string> Receive(string inputText);
+		List<string> Receive(string url, string inputText);
 
 		/// <summary>
 		/// Gets a stream object to the server object, that might be used for common stream operations.

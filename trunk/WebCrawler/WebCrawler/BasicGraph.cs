@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Noea.Http;
 
 namespace WebCrawler
 {
@@ -136,15 +137,19 @@ namespace WebCrawler
 
         public System.Collections.IList bfSearch2(string url)
         {
+            string responseData = "";
             List<Vertex> queue = new List<Vertex>();
             List<string> linksFromSite = new List<string>();
-            bfSearch = new List<Vertex>;
+            IHttp http = new HttP();
+            //bfSearch = new List<Vertex>;
 
             Vertex localVertex = new Vertex(url);
-
-            linksFromSite = (List<string>)HTMLDoc.searchMatches(url);
-
-            while (linksFromSite.Count > 0)
+            responseData = http.Open(url);
+            http.Close();
+            linksFromSite = http.Receive(responseData);
+            int count = linksFromSite.Count;
+            
+            while (count > 0)
             {
                 //bfSearch.Add(localVertex);
                 //Vertex current = queue[0];
@@ -153,9 +158,13 @@ namespace WebCrawler
                 if (localVertex.Mark == false)
 	            {
 		            localVertex.Mark = true;
+
+                    
+
                     foreach (var item in linksFromSite)
 	                {
                         Vertex v = new Vertex(item);
+                        count--;
                         queue.Add(v);
 	                }
 	            }

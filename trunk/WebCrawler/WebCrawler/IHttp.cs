@@ -33,7 +33,7 @@ namespace Noea.Http
 		/// </summary>
 		/// <param name="url">Identification of the server. i.e a dns name or a ip address</param>
 		/// <param name="port">Number between 1 and 65335, default 80</param>
-		void Open(string url);
+		string Open(string url);
 
 		/// <summary>
 		/// Closes the connection to server. 

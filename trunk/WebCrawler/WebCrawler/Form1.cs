@@ -37,7 +37,12 @@ namespace WebCrawler
             mainNode.Text = "Main: " +url;
             this.treeView.Nodes.Add(mainNode);
 
-            webBrowser.Navigate(url); 
+            webBrowser.Navigate(url);
+
+            foreach (var item in localVertices)
+            {
+
+            }
         }
 
         private System.Collections.IList bfSearch(string url)
